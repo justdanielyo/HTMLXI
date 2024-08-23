@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image | HTML | CSS | JS</title>
+  <link rel="stylesheet" href="image.css">
+</head>
+
+<body>
+  <form id="imageForm">
+    <img id="myImg" src="img/Yunli1.png" alt="Image">
+    <select id="imageSelect">
+      <option value="img/Yunli1.png">Image 1</option>
+      <option value="img/Yunli2.png">Image 2</option>
+      <option value="img/Yunli3.png">Image 3</option>
+      <option value="img/Yunli4.png">Image 4</option>
+      <option value="img/sticker_9.png">Image 5</option>
+    </select>
+    <select id="opacitySelect">
+      <option value="1">Opacity 1</option>
+      <option value="0.5">Opacity 0.5</option>
+      <option value="0.2">Opacity 0.2</option>
+    </select>
+    <input type="submit" value="Apply">
+  </form>
+
+  <script>
+    const imgElement = document.getElementById('myImg');
+    const formElement = document.getElementById('imageForm');
+
+    formElement.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const imageUrl = document.getElementById('imageSelect').value;
+      const opacityValue = document.getElementById('opacitySelect').value;
+      imgElement.src = imageUrl;
+      imgElement.style.opacity = opacityValue;
+    });
+  </script>
+</body>
+
+</html>
